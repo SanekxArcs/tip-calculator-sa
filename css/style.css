@@ -168,8 +168,10 @@ span {
 
 .btn-reset {
     margin: 0 3rem 3rem 3rem;
+    background-color: var(--Darkgrayishcyan);
+    color: var(--Verydarkcyan);
 }
-.btn-active,
+.btn:focus,
 .btn:hover,
 .btn:active {
     background-color: var(--Strongcyan);
@@ -186,10 +188,6 @@ span {
 .btn-reset:hover,
 .btn-reset:active{
     background-color: var(--Lightgrayishcyan);
-}
-.bnt-not-active {
-    background-color: var(--Darkgrayishcyan);
-    color: var(--Verydarkcyan);
 }
 
 
