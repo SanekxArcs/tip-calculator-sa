@@ -13,7 +13,7 @@ tipPerPerson.innerHTML = "$0.00";
 totalPerPerson.innerHTML = "$0.00";
 billInput.value = "";
 tipInput.value = "";
-personInput.value = "1";
+personInput.value = "";
 
 
 // Calculate when presed one of tne buttons
@@ -66,11 +66,11 @@ function calculateTip(billInputs, tipPercentages, personInputs) {
 //Reset Everything
 resetButton.addEventListener("click", resetEverything);
 function resetEverything() {
-  tipPerPerson.innerHTML = "$0.00";
-  totalPerPerson.innerHTML = "$0.00";
-  billInput.value = "0";
+  tipPerPerson.innerHTML = "$0.0";
+  totalPerPerson.innerHTML = "$0.0";
+  billInput.value = "";
   tipInput.value = "";
-  personInput.value = "1";
+  personInput.value = "";
   personInput.classList.remove('red-input');
   label.classList.add('hidden');
   btnsWithProcent.forEach((btn) => {

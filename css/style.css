@@ -11,7 +11,12 @@
 html {
     transition: all 0.4s;
     font-size: 62.5%;
-    overflow-x: hidden;
+    overflow-x: hidden;    
+    box-sizing: border-box;
+    margin: 0;
+	padding: 0;
+	border: 0;
+    overflow: hidden;
 }
 
 body {
@@ -19,25 +24,34 @@ body {
     font-weight: 700;
     background-color: var(--Lightgrayishcyan);
     height: 100vh;
-    overflow: hidden;
+    
     width: 100vw;
     display: flex;
     justify-content: center;
     align-items:center;
     flex-direction: column;
-    box-sizing: border-box;
     margin: 0;
-	padding: 0;
-	border: 0;
 }
 
 img {
+    width: 8rem;
     margin-bottom: 8rem;
 }
 
 span {
     font-size: 1rem;
     color: var(--Grayishcyan);
+}
+
+label {
+    color: var(--Darkgrayishcyan);
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+span {
+    color: var(--Grayishcyan);
+    font-size: 1rem;
 }
 
 .wrapper {
@@ -54,12 +68,6 @@ span {
     margin: 4rem;
 }
 
-label {
-    color: var(--Darkgrayishcyan);
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-}
-
 .input {
     box-sizing:border-box;
     border-style: none;
@@ -72,6 +80,7 @@ label {
     border: solid 0.2rem var(--White);
     text-align: end ;
 }
+
 .labels {
     display: flex;
     justify-content: space-between;
@@ -151,19 +160,17 @@ label {
     padding: 0 3rem;
 }
 
-span {
-    color: var(--Grayishcyan);
-    font-size: 1rem;
-}
 
 .tip-amount-per-person {
-    font-size: 2rem;
+    font-size: 1.5rem;
     color: var(--White);
+    align-self: center;
 }
 
 .price {
     font-size: 4rem;
-    color: var(--Strongcyan);
+    color: var(--Strongcyan);    
+    align-self: center;
 }
 
 .btn-reset {
@@ -171,12 +178,14 @@ span {
     background-color: var(--Darkgrayishcyan);
     color: var(--Verydarkcyan);
 }
+
 .btn:focus,
 .btn:hover,
 .btn:active {
     background-color: var(--Strongcyan);
     color: var(--Verydarkcyan);
 }
+
 .btn:hover,
 .btn:active,
 .input:hover,
@@ -190,7 +199,6 @@ span {
     background-color: var(--Lightgrayishcyan);
 }
 
-
 .num-people-container,
 .bill-container,
 .select-tip-container {
@@ -199,14 +207,27 @@ span {
     justify-content: end;
 }
 
+.attribution a{
+    text-decoration: none;
+    color: var(--Verydarkcyan);
+}
+
+.attribution {
+    margin: 2rem 0;
+    color: var(--Grayishcyan);
+}
+
 @media screen and (max-width: 769px) {
 
     html {
         transition: all 0.5s;
-        overflow: visible;
+        overflow: scroll;
+    }
+    body {
+        height: auto;
     }
     img {
-        margin: auto;
+        margin: 4rem;
     }
     .conteiner {
         grid-template-columns: 34rem;
@@ -216,14 +237,20 @@ span {
     }
     
 }
+
 @media screen and (max-width: 376px) {
     html {
         font-size: 55%;
+    }
+    
+    img {
+        margin: 4rem;
     }
     .conteiner {
         border-radius: 5rem
     }
 }
+
 @media screen and (max-width: 321px) {
     html {
         font-size: 45%;
