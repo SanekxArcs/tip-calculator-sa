@@ -1,48 +1,233 @@
-body {
-    font-family: 'Roboto Mono', monospace;
-    
+:root {
+    --Verydarkcyan: hsl(183, 100%, 15%);
+    --Darkgrayishcyan: hsl(186, 14%, 43%);
+    --Grayishcyan: hsl(184, 14%, 56%);
+    --Lightgrayishcyan: hsl(185, 41%, 84%);
+    --Verylightgrayishcyan: hsl(189, 41%, 97%);
+    --White: hsl(0, 0%, 100%);
+    --Strongcyan: hsl(172, 67%, 45%);
+  }
+
+html {
+    transition: all 0.4s;
+    font-size: 62.5%;
+    overflow-x: hidden;
 }
-.conteiner {
+
+body {
+    font-family: 'Space Mono', monospace;
+    font-weight: 700;
+    background-color: var(--Lightgrayishcyan);
     height: 100vh;
     overflow: hidden;
-    background-color: #41bcbe;
     width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    flex-direction: column;
+    box-sizing: border-box;
+    margin: 0;
+	padding: 0;
+	border: 0;
 }
-.window {
 
+img {
+    margin-bottom: 8rem;
 }
-.splitter {
 
+span {
+    font-size: 1rem;
+    color: var(--Grayishcyan);
 }
-.inputs {
 
+.wrapper {
+    background-color: var(--White);
+    border-radius: 2rem;
 }
+
+.conteiner {
+    height: 35rem;
+    width: 72rem;
+    display: grid;
+    grid-template-columns: 34rem 34rem;
+    gap: 4rem;
+    margin: 4rem;
+}
+
+label {
+    color: var(--Darkgrayishcyan);
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.input {
+    box-sizing:border-box;
+    border-style: none;
+    background-color: var(--Lightgrayishcyan);
+    font-weight: inherit;
+    font-family: inherit;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    width: 100%;
+    border: solid 0.2rem var(--White);
+    text-align: end ;
+}
+.labels {
+    display: flex;
+    justify-content: space-between;
+}
+
+.hidden {
+    display: none;
+}
+
+.red{
+    color: red;
+}
+
+.red-input {    
+    border-color: red;
+}
+
+.input:hover,
+.input:focus {
+    border: solid 0.2rem;
+    border-color: var(--Strongcyan);
+}
+
 .bill {
-
+    background-image: url(/images/icon-dollar.svg);
+    background-repeat: no-repeat;
+    background-position: 1rem center;
 }
-.input-bill {
 
+.people {
+    background-image: url(/images/icon-person.svg);
+    background-repeat: no-repeat;
+    background-position: 1rem center;
 }
-.select-tip {
 
+.inputs {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
+
+.buttons-container {
+    display: grid;
+    grid-template-columns: 10.5rem 10.5rem 10.5rem;
+    grid-template-rows: 1fr 1fr;
+    gap: 1rem;
+}
+
 .btn {
-
+    border-style: none;
+    border-radius: 0.5rem;
+    background-color: var(--Verydarkcyan);
+    color: var(--White);
+    font-family: inherit;
+    font-size: 2rem;
+    font-weight: inherit;
+    height: 4rem;
 }
-.custom-input 
 
-.num-people {
-
+.btn-reset,
+.btn-active {
+    background-color: var(--Strongcyan);
 }
-.num-of-people {
 
-}
 .results {
-
+    background-color: var(--Verydarkcyan);
+    border-radius: 1rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr auto;
 }
+
+.tip-amount-per-person-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 0 3rem;
+}
+
+span {
+    color: var(--Grayishcyan);
+    font-size: 1rem;
+}
+
 .tip-amount-per-person {
-
+    font-size: 2rem;
+    color: var(--White);
 }
-.btn-reset {
 
+.price {
+    font-size: 4rem;
+    color: var(--Strongcyan);
+}
+
+.btn-reset {
+    margin: 0 3rem 3rem 3rem;
+}
+.btn-active,
+.btn:hover,
+.btn:active {
+    background-color: var(--Strongcyan);
+    color: var(--Verydarkcyan);
+}
+.btn:hover,
+.btn:active,
+.input:hover,
+.input:focus {
+    transition: all 0.4s;    
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.btn-reset:hover,
+.btn-reset:active{
+    background-color: var(--Lightgrayishcyan);
+}
+.bnt-not-active {
+    background-color: var(--Darkgrayishcyan);
+    color: var(--Verydarkcyan);
+}
+
+
+.num-people-container,
+.bill-container,
+.select-tip-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+}
+
+@media screen and (max-width: 769px) {
+
+    html {
+        transition: all 0.5s;
+        overflow: visible;
+    }
+    img {
+        margin: auto;
+    }
+    .conteiner {
+        grid-template-columns: 34rem;
+        grid-template-rows: 1fr 1fr;
+        height: auto;
+        width: auto;
+    }
+    
+}
+@media screen and (max-width: 376px) {
+    html {
+        font-size: 55%;
+    }
+    .conteiner {
+        border-radius: 5rem
+    }
+}
+@media screen and (max-width: 321px) {
+    html {
+        font-size: 45%;
+    }
 }

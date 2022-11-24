@@ -5,8 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <!-- <link rel="stylesheet" href="css/reset.css"> -->
   <link rel="stylesheet" href="css/style.css">
-  <script src="js/main.js" defer></script>
+  <!-- <script src="js/main.js" defer></script> -->
+  <script src="js/copy.js"></script>
   
   <title>Frontend Mentor | Tip calculator app</title>
 
@@ -15,31 +20,62 @@
   </style>
 </head>
 <body>
-  <section class="conteiner">
-    <div class="window">
-      <h1 class="splitter">S P L I<br/>T T E R</h1>
-      <div class="inputs">
-        <h2 class="bill">Bill</h2>
-        <input type="number" class="input-bill" placeholder="Bill">
-        <h2 class="select-tip">Select Tip %</h2>
-        <button class="btn">5%</button>
-        <button class="btn">10%</button>
-        <button class="btn">15%</button>
-        <button class="btn">20%</button>
-        <button class="btn">25%</button>
-        <input type="number" class="custom-input" placeholder="Custom">
-        <h2 class="num-people">
-          Number of People
-        </h2>
-        <input type="number" class="num-of-people" placeholder="Enter number of people">
-      </div>
-      <div class="results">
-        <p class="tip-amount-per-person">Tip Amount<br/>/ person</p>
-        <p class="tip-amount-per-person">Total<br/>/ person</p>
-        <button class="btn btn-reset">Reset</button>
+
+    <img src="images/logo.svg" alt="logo">
+    <div class="wrapper">
+      <div class="conteiner">
+
+        <div class="inputs">
+
+          <div class="bill-container">            
+            <label for="bill" class=" text">
+              Bill              
+            </label>
+            <input type="number" class="input bill" id="bill" placeholder="">
+          </div>
+
+          <div class="select-tip-container">
+            <label for="tip" class="select-tip text">Select Tip %</label>
+            <div class="buttons-container">
+              <button id="btn" class="btn">5%</button>
+              <button id="btn" class="btn">10%</button>
+              <button id="btn" class="btn btn-active">15%</button>
+              <button id="btn" class="btn">20%</button>
+              <button id="btn" class="btn">25%</button>
+              <input type="number" class=" custom input" id="tip btn" placeholder="Custom">
+            </div>
+          </div>
+
+          <div class="num-people-container">
+            <div class="labels">
+              <label for="numPeople" class="num-people text">
+                Number of People
+              </label>
+              <label for="numPeople" class="num-people text red hidden label-CBZ" >Can't be zero</label>
+            </div>
+            <input type="number" class="input people" id="numPeople"/>
+          </div>
+
+        </div>
+
+        <div class="results">
+            <div class="tip-amount-per-person-container">
+              <p class="tip-amount-per-person">Tip Amount<br/><span>
+                / person
+              </span></p>
+              <p class="price price-amount">1.0$</p>
+            </div>
+            
+            <div class="tip-amount-per-person-container">
+              <p class="tip-amount-per-person">Total<br/><span>/ person</span></p>
+              <p class="price price-total">22.0$</p>
+            </div>
+
+          <button class="btn btn-reset">Reset</button>
+        </div>
       </div>
     </div>
-  </section>
+
 
   <!-- <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
