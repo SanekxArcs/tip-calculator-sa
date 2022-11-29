@@ -25,7 +25,7 @@ function calkBtnPress(e) {
   let tipvalue = e.target.innerText;
   tipvalue = tipvalue.substr(0, tipvalue.length - 1);
 
-  if (personInput.value === "") return;
+  if (billInput.value === "") billInput.value = 1;
   if (personInput.value === "") personInput.value = 1;
   
   calculateTip(
@@ -51,19 +51,19 @@ function calkTipInput(e) {
   );
 }
 
-// calculatiob function
+// Calculation function
 function calculateTip(billInputs, tipPercentages, personInputs) {
   let tipAmount = ((billInputs / 100) * tipPercentages) / personInputs;
   let tip = Math.floor(tipAmount).toFixed(2);
   
-  let totalAmount = (tipAmount * personInputs + billInputs) / personInputs;
+  let totalAmount = tipAmount + (billInputs / personInputs);
   totalAmount = totalAmount.toFixed(2);
   
   tipPerPerson.innerHTML = `$${tip}`;
   totalPerPerson.innerHTML = `$${totalAmount}`;
 }
 
-//Reset Everything
+// Reset Everything
 resetButton.addEventListener("click", resetEverything);
 function resetEverything() {
   tipPerPerson.innerHTML = "$0.0";
@@ -78,7 +78,7 @@ function resetEverything() {
     });
 };
 
-//add Cant be zero adn red border
+// Add "Can`t be zero" and red border
 personInput.addEventListener('input', () => {
     if( personInput.value > 0 || personInput.value === "") {
         personInput.classList.remove('red-input');
