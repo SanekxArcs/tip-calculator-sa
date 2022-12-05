@@ -60,9 +60,8 @@ function createInputs(){
   return
 };
 
-personsWindow.addEventListener('iuput', forEach() {
-  recordData;
-});
+personsWindow.addEventListener('iuput', forEach(recordData )
+);
 
 let dataBill = [0];
 
