@@ -9,71 +9,131 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
-  <script src="js/main.js" defer></script>
+  <script src="./js/windowChange.js" defer></script>
+  <script src="./js/personal.js" defer></script>
+  <!-- <script src="./js/common.js" defer></script> -->
   
   <title>Tip calculator app</title>
 </head>
-<body>
+  <body>
 
-    <img src="images/logo.svg" alt="logo">
-    <div class="wrapper">
-      <div class="conteiner">
+      <div class="wrapper">
+        <div class="wrapper-inner">
 
-        <div class="inputs">
-
-          <div class="bill-container">            
-            <label for="bill" class=" text">
-              Bill              
-            </label>
-            <input type="number" class="input bill" id="bill" placeholder="">
+          <div class="page-buttons">
+            <button class=" btn people-page">One bill</button>
+            <button class=" btn common-page active">Personals</button>
           </div>
 
-          <div class="select-tip-container">
-            <label for="tip" class="select-tip text">Select Tip %</label>
-            <div class="buttons-container">
-              <button id="btn" class="btn">5%</button>
-              <button id="btn" class="btn">10%</button>
-              <button id="btn" class="btn">15%</button>
-              <button id="btn" class="btn">20%</button>
-              <button id="btn" class="btn">25%</button>
-              <input type="number" class=" custom input" id="tip" placeholder="Custom">
-            </div>
-          </div>
-
-          <div class="num-people-container">
-            <div class="labels">
-              <label for="numPeople" class="num-people text">
-                Number of People
-              </label>
-              <label for="numPeople" class="num-people text red hidden label-CBZ" >Can't be zero</label>
-            </div>
-            <input type="number" class="input people" id="numPeople"/>
-          </div>
-
-        </div>
-
-        <div class="results">
-            <div class="tip-amount-per-person-container">
-              <p class="tip-amount-per-person">Tip Amount<br/><span>
-                / person
-              </span></p>
-              <p class="price price-amount">$0.0</p>
-            </div>
+          <div class="conteiner">
             
-            <div class="tip-amount-per-person-container">
-              <p class="tip-amount-per-person">Total<br/><span>/ person</span></p>
-              <p class="price price-total">$0.0</p>
+            <div class="inputs">
+
+              <div class="num-people-container">
+                <div class="labels">
+                  <label for="numPeople" class="num-people text">
+                    Number of Persons
+                  </label>
+                  <label for="numPeople" class="num-people text red hidden label-CBZ" >Can't be zero</label>
+                </div>
+                <input type="number" min="0" max="50" class="input people" id="numPeople"/>
+              </div>
+              
+              <div class="select-tip-container">
+                <div class="imput-range-container">
+                  <label for="tip" class="select-tip text">Select Tip %</label>
+                  <div class="range">
+                    <div class="sliderValue show">
+                      <span class="">0</span>
+                    </div>
+                    <div class="field">
+                      <input type="range" id="Tip result" class="custom input " name="tip" min="0" max="50" value="25" step="1">
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="list-of-persons">
+
+                <div class="top-label-persons">
+                  <div class="name-text text">№</div>
+                  <div class="name-text text">Name</div>
+                  <div class="bill-text text">Bill</div>
+                </div>
+                <div class="container-for-persons">
+                  <div class="list-of-person">
+    
+                    <div class="personal-number">
+                      <p class="number number-text" id="1">1</p>
+                    </div>
+                    
+                    <div class="names">
+                      <input type="text" class="person-name input">
+                    </div>
+                    
+                    <div class="personal-bill">
+                      <input type="number" class="person-bill input">
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+            <!--*************************************/
+                        /* Results */
+            /************************************* -->
+            <div class="results">
+
+              <div class="container-results">
+
+                <div class="top-label-persons-results">
+
+                  <p> </p>
+                  <div class="name-text text">№</div>
+                  <div class="name-text text">Name</div>
+                  <div class="bill-text text">Bill</div>
+
+                </div>
+                <div class="js-list-of-person-results">
+
+                  <div class="list-of-person-results">
+                    
+                    <div class=" check-boxes check-boxes-result">
+                      <input id="1" type="checkbox" class="material_checkbox">
+                    </div>
+                    
+                    <div class="personal-number-result">
+                      <p class="number-result" id="1">1</p>
+                    </div>
+                    
+                    <div class="names-result">
+                      <p class="person-name-result">oleksandr</p>
+                    </div>
+                    
+                    <div class="personal-bill-result">
+                      <p class="person-bill-result">49.00</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="result-bill">
+
+              </div>
+              <button class="btn btn-reset">Reset</button>
             </div>
 
-          <button class="btn btn-reset">Reset</button>
+          </div>
         </div>
-      </div>
+        </div>
+        
+
+    <div class="attribution">
+      Coded by 
+      <a href="https://github.com/SanekxArcs/TipCalculator-SA">
+        Sanekx Arcs
+      </a>.
     </div>
 
-
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="https://github.com/SanekxArcs/TipCalculator-SA">Sanekx Arcs</a>.
-  </div>
-</body>
+  </body>
 </html>

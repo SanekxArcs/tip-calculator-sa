@@ -9,9 +9,9 @@ const billInput = document.querySelector('.input.bill'),
     label = document.querySelector('.label-CBZ'),
     resetButton = document.querySelector('.btn-reset');
 
-tipPerPerson.innerHTML = "$0.00";
-totalPerPerson.innerHTML = "$0.00";
-billInput.value = "";
+// tipPerPerson.textContent = "$0.00";
+// totalPerPerson.innerHTML = "$0.00";
+// billInput.value = "500";
 tipInput.value = "";
 personInput.value = "";
 
