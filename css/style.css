@@ -350,19 +350,13 @@ label {
 
     html {
         transition: all 0.5s;
-        overflow: scroll;
-    }
-    body {
-        height: 100vh;
-    }
-    img {
-        margin: 4rem;
     }
     .conteiner {
-        grid-template-columns: 34rem;
+        grid-template-columns: 32rem;
         grid-template-rows: 1fr 1fr;
         height: auto;
         width: auto;
+        
     }
     
 }
@@ -378,6 +372,7 @@ label {
     img {
         margin: 4rem;
     }
+
     .conteiner {
         border-radius: 5rem
     }
