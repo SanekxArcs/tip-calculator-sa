@@ -1,136 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- displays site properly based on user's device -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
-  <link rel="apple-touch-icon" sizes="180x180" href=".//images/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href=".//images/favicon-16x16.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="./css/style.css">
+  <script src="./js/main.js" defer></script>
   <script src="./js/windowChange.js" defer></script>
-  <script src="./js/personal.js" defer></script>
-  <!-- <script src="./js/common.js" defer></script> -->
-
-  <title>Tip calculator app | Oleksandr Dzisiak</title>
+  
+  <title>Tip calculator app</title>
 </head>
-
 <body>
-
-  <div class="wrapper">
-    <div class="wrapper-inner">
-
-      <div class="page-buttons">
-        <button id="btn-page-change" class=" btn people-page">One bill</button>
-        <button id="btn-page-change"class=" btn common-page active">Personals</button>
-      </div>
-
+    <div class="wrapper">
       <div class="conteiner">
 
         <div class="inputs">
 
+          <div class="bill-container">            
+            <label for="bill" class=" text">
+              Bill              
+            </label>
+            <input type="number" class="input bill" id="bill" min="0" >
+          </div>
+
+          
           <div class="num-people-container">
             <div class="labels">
               <label for="numPeople" class="num-people text">
-                Number of Persons
+                Number of People
               </label>
-              <label for="numPeople" class="num-people text red hidden label-CBZ">Can't be zero</label>
+              <label for="numPeople" class="num-people text red hidden label-CBZ" >Can't be zero</label>
             </div>
-            <input type="number" min="0" max="50" class="input people" id="numPeople" />
+            <input type="number" class="input people" id="numPeople" min="0"/>
           </div>
-
+          
           <div class="select-tip-container">
-            <div class="input-range-container">
+            <div class="imput-range-container">
               <label for="tip" class="select-tip text">Select Tip %</label>
               <div class="range">
                 <div class="sliderValue show">
                   <span class="">0</span>
                 </div>
                 <div class="field">
-                  <input type="range" id="Tip result" class="custom input " name="tip" min="0" max="50" value="25"
-                    step="1">
+                  <input type="range" id="Tip result" class="custom input " name="tip" min="0" max="100" step="5" value="10">
                 </div>
               </div>
             </div>
           </div>
 
-          <div class="list-of-persons">
-
-            <div class="top-label-persons">
-              <div class="name-text text">№</div>
-              <div class="name-text text">Name</div>
-              <div class="bill-text text">Bill</div>
-            </div>
-
-            <div class="container-for-persons">
-
-              <!-- <div class="list-of-person">
-
-                <p class="number number-text" >1</p>
-                <input type="text" class="person-name input" value="alex">
-                <input type="number" class="person-bill input" value="50" min="0" max="9999">
-
-              </div> -->
-
-            </div>
-
-          </div>
-
         </div>
-        <!-- *************************************/
-                        /* Results */
-            /************************************* -->
+        
         <div class="results">
-
-          <div class="container-results">
-
-            <div class="top-label-persons-results">
-
-              <p> </p>
-              <div class="name-text text">№</div>
-              <div class="name-text text">Name</div>
-              <div class="bill-text text">Bill</div>
-
+            <div class="tip-amount-per-person-container">
+              <p class="tip-amount-per-person">Tip Amount<br/><span>
+                / person
+              </span></p>
+              <p class="price price-amount">$0.0</p>
             </div>
-
-            <div class="js-list-of-person-results">
-
-              <!-- <div class="list-of-person-results">
-
-                <input id="1" type="checkbox" class="material_checkbox checkbox-person">
-                <p class="number-result" id="1">1</p>
-                <p class="person-name-result">oleksandr</p>
-                <p class="person-bill-result">49.00</p>
-
-              </div> -->
-
+            
+            <div class="tip-amount-per-person-container">
+              <p class="tip-amount-per-person">Total<br/><span>/ person</span></p>
+              <p class="price price-total">$0.0</p>
             </div>
-          </div>
-
-          <p class="rultats-bill-total">
-            TOTAL <span>$0.00</span>
-          </p>
 
           <button class="btn btn-reset">Reset</button>
         </div>
-
       </div>
     </div>
+
+
+  <div class="attribution">Coded by <a href="https://github.com/SanekxArcs/TipCalculator-SA">Sanekx Arcs</a>.
   </div>
-
-
-  <div class="attribution">
-    Coded by
-    <a href="https://github.com/SanekxArcs/TipCalculator-SA">
-      Sanekx Arcs
-    </a>
-  </div>
-
 </body>
-
 </html>
