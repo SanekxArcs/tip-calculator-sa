@@ -26,8 +26,8 @@
     <div class="wrapper-inner">
 
       <div class="page-buttons">
-        <button class=" btn people-page">One bill</button>
-        <button class=" btn common-page active">Personals</button>
+        <button id="btn-page-change" class=" btn people-page">One bill</button>
+        <button id="btn-page-change"class=" btn common-page active">Personals</button>
       </div>
 
       <div class="conteiner">
@@ -45,7 +45,7 @@
           </div>
 
           <div class="select-tip-container">
-            <div class="imput-range-container">
+            <div class="input-range-container">
               <label for="tip" class="select-tip text">Select Tip %</label>
               <div class="range">
                 <div class="sliderValue show">
@@ -66,26 +66,23 @@
               <div class="name-text text">Name</div>
               <div class="bill-text text">Bill</div>
             </div>
+
             <div class="container-for-persons">
-              <div class="list-of-person">
 
-                <div class="personal-number">
-                  <p class="number number-text" id="1">1</p>
-                </div>
+              <!-- <div class="list-of-person">
 
-                <div class="names">
-                  <input type="text" class="person-name input">
-                </div>
+                <p class="number number-text" >1</p>
+                <input type="text" class="person-name input" value="alex">
+                <input type="number" class="person-bill input" value="50" min="0" max="9999">
 
-                <div class="personal-bill">
-                  <input type="number" class="person-bill input">
-                </div>
-              </div>
+              </div> -->
+
             </div>
+
           </div>
 
         </div>
-        <!--*************************************/
+        <!-- *************************************/
                         /* Results */
             /************************************* -->
         <div class="results">
@@ -100,32 +97,25 @@
               <div class="bill-text text">Bill</div>
 
             </div>
+
             <div class="js-list-of-person-results">
 
-              <div class="list-of-person-results">
+              <!-- <div class="list-of-person-results">
 
-                <div class=" check-boxes check-boxes-result">
-                  <input id="1" type="checkbox" class="material_checkbox">
-                </div>
+                <input id="1" type="checkbox" class="material_checkbox checkbox-person">
+                <p class="number-result" id="1">1</p>
+                <p class="person-name-result">oleksandr</p>
+                <p class="person-bill-result">49.00</p>
 
-                <div class="personal-number-result">
-                  <p class="number-result" id="1">1</p>
-                </div>
+              </div> -->
 
-                <div class="names-result">
-                  <p class="person-name-result">oleksandr</p>
-                </div>
-
-                <div class="personal-bill-result">
-                  <p class="person-bill-result">49.00</p>
-                </div>
-              </div>
             </div>
           </div>
 
-          <div class="result-bill">
+          <p class="rultats-bill-total">
+            TOTAL <span>$0.00</span>
+          </p>
 
-          </div>
           <button class="btn btn-reset">Reset</button>
         </div>
 

@@ -1,83 +1,71 @@
 "use strict";
 
-const personInput = document.querySelector(".people"),
-  personsWindow = document.querySelector(".container-for-persons"),
-  resultText = document.querySelector(".js-list-of-person-results"),
-  nameInputsText = document.querySelectorAll(".person-name"),
-  billInputsValue = document.querySelectorAll(".person-bill"),
-  IdNumber = document.querySelectorAll(".number-text");
+let personInput, personsWindow, resultText, IdNumber, nameInputsText, billInputsValue, checkboxPerson,containerPerson;
 
-personInput.addEventListener("input", createInputs);
+personInput = document.querySelector("#numPeople");
+personsWindow = document.querySelector(".container-for-persons");
+resultText = document.querySelector(".js-list-of-person-results");
 
-function createInputs() {
+containerPerson = document.querySelectorAll('.list-of-person');
+IdNumber = document.querySelectorAll(".number-text");
+nameInputsText = document.querySelectorAll(".person-name");
+billInputsValue = document.querySelectorAll(".person-bill");
+checkboxPerson = document.querySelectorAll(".checkbox-person");
+
+// personInput.addEventListener('input', () => {
+//   if( personInput.value > 0 || personInput.value === "") {
+//       personInput.classList.remove('red-input');
+//       label.classList.add('hidden');
+//   } else {
+//       personInput.classList.add('red-input');
+//       label.classList.remove('hidden');
+//   }
+// });
+
+personInput.addEventListener("input", function createInputs() {
   let clearDivs = document.querySelectorAll(".container-for-persons");
-  let clearResurtDivs = document.querySelectorAll(".list-of-person-results");
+  let clearResurtDivs = document.querySelectorAll('.js-list-of-person-results');
+
   clearDivs.forEach((e) => {
     e.innerHTML = "";
   });
   clearResurtDivs.forEach((e) => {
     e.innerHTML = "";
   });
-  let valuePersons = personInput.value;
-  console.log(valuePersons);
-  for (let index = 1; index <= valuePersons; index++) {
-    console.log(index);
-    personsWindow.innerHTML += `<div class="list-of-person">
-    
-    <div class="personal-number">
-      <p class="number number-text" id="${index}">${index}</p>
-    </div>
-    
-    <div class="names">
-      <input type="text" class="person-name input">
-    </div>
-    
-    <div class="personal-bill">
-      <input type="number" class="person-bill input">
-    </div>
-  </div>`;
-    resultText.innerHTML += `<div class="list-of-person-results">
 
-  <div class=" check-boxes check-boxes-result">
-    <input id="${index}" type="checkbox" class="material_checkbox">
-  </div>
-  
-  <div class="personal-number-result">
+  let valuePersons = personInput.value;
+
+  for (let index = 1; index <= valuePersons; index++) {
+
+    personsWindow.innerHTML += `<div class="list-of-person">
+    <p class="number number-text" id="${index}">${index}</p>
+    <input type="text" class="person-name input">
+    <input type="number" class="person-bill input">
+  </div>`;
+
+    resultText.innerHTML += `<div class="list-of-person-results">
+    <input id="1" type="checkbox" class="material_checkbox">
     <p class="number-result" id="${index}">${index}</p>
-  </div>
-  
-  <div class="names-result">
     <p class="person-name-result">oleksandr</p>
-  </div>
-  
-  <div class="personal-bill-result">
     <p class="person-bill-result">49.00</p>
-  </div>
-</div>`;
+  </div>`;
   }
   return;
-}
+});
+
+// if(billInputsValue < 0 && nameInputsText !== ""){ 
+//  console.log("hoeedzjhkjedb");
+// }
+
 
 //create function for record many inputs data and add to array of objects?
-let artists = [];
 
-function addArtist(artistsToAdd) {
-  artists.push(...artistsToAdd);
-  return artists;
-}
+// let dataPersons = [];
 
-const objects = [
-  {
-    rank: 3,
-    name: "Bob",
-    year: 1995,
-    album: "Album3",
-  },
-  {
-    rank: 4,
-    name: "Nas",
-    year: 1992,
-    album: "Album4",
-  },
-];
-console.log(addArtist(objects));
+// function addPerson(dataPersonsToAdd) {
+//   dataPersons.push(...dataPersonsToAdd);
+//   return dataPersons;
+// }
+
+
+// console.log(addArtist(objects));

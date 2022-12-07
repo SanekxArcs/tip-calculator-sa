@@ -14,13 +14,16 @@ inputSlider.oninput = (()=>{
     slideValue.style.left = (10) + "%";
   }else {
     slideValue.textContent = value;
-  slideValue.style.width = (value*2) + "%";
+  slideValue.style.width = (value/2) + "%";
   slideValue.style.left = `calc(${(value*2) + "%"})`;
-  
   }
   slideValue.classList.add("show");
 });
-// inputSlider.onblur = (()=>{
-//   slideValue.classList.remove("show");
-// });
+
+
+
+
+
+
+
 

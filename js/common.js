@@ -79,12 +79,12 @@ function resetEverything() {
 };
 
 // Add "Can`t be zero" and red border
-personInput.addEventListener('input', () => {
-    if( personInput.value > 0 || personInput.value === "") {
-        personInput.classList.remove('red-input');
-        label.classList.add('hidden');
-    } else {
-        personInput.classList.add('red-input');
-        label.classList.remove('hidden');
-    }
-});
+// personInput.addEventListener('input', () => {
+//     if( personInput.value > 0 || personInput.value === "") {
+//         personInput.classList.remove('red-input');
+//         label.classList.add('hidden');
+//     } else {
+//         personInput.classList.add('red-input');
+//         label.classList.remove('hidden');
+//     }
+// });
